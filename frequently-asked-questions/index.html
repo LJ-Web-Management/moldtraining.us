@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../css/styles.css?v=7">
+<link rel="stylesheet" href="../css/styles.css?v=8">
 
 <script type="application/ld+json">
 {
@@ -283,9 +283,71 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<div class="machine-view">
+  <p class="machine-view__meta"># moldtraining.us/frequently-asked-questions/ &mdash; agent-readable view</p>
+  <pre class="machine-view__pre"><strong># page</strong>
+title  Mold FAQ | moldtraining.us
+desc   Answers on mold awareness, prevention, remediation, and IAC2 mold inspector certification, plus tenant, liability, and state-by-state mold law questions.
 
-<header class="site-header">
+<strong># categories</strong>
+Identifying &amp; Assessing Mold (4)
+  - How can I tell if it's mold or just dirt or mildew staining?
+  - Do we need to test for mold, or can staff just look at it?
+  - Is "black mold" really more dangerous than other types?
+  - How much visible mold is small enough for maintenance staff to clean vs. needing a certified remediation company?
+
+Tenant Complaints &amp; Resolution (7)
+  - A tenant reports mold. What's the first thing my team should do?
+  - A tenant says mold is making them sick and wants to break the lease. What do we do?
+  - Can a tenant withhold rent because of mold?
+  - A tenant is refusing to let maintenance in to inspect for mold. What now?
+  - A tenant is blaming mold on a maintenance issue and is threatening legal action. How do we protect ourselves?
+  - Do we have to disclose known mold history to a prospective tenant?
+  - A tenant wants to hire their own mold inspector. Can they?
+
+Moisture Sources &amp; Prevention (3)
+  - What are the most common mold triggers property teams miss during routine inspections?
+  - How often should units be inspected for moisture issues?
+  - What humidity level should we be targeting to prevent mold growth?
+
+Remediation &amp; Vendor Management (4)
+  - When does a mold issue require a certified remediation company instead of in-house staff?
+  - How do we vet a mold remediation contractor?
+  - Do we need to relocate tenants during remediation?
+  - How do we know remediation actually worked?
+
+Documentation &amp; Liability (3)
+  - What should go in a mold complaint file?
+  - How long should we retain mold-related documentation?
+  - Does our general liability insurance cover mold claims?
+
+Training &amp; Next Steps (9)
+  - My team already knows the basics. Is formal mold training really necessary?
+  - How quickly can we get our staff certified?
+  - Can this training cover our whole portfolio, including bilingual staff?
+  - What is mold awareness training?
+  - Who should take the Mold Prevention &amp; Remediation Awareness course?
+  - How much does mold awareness training cost, and how long does it take?
+  - How do I become a certified mold inspector?
+  - What is IAC2 mold inspector certification?
+  - What's the difference between a mold inspector and a mold remediation contractor?
+
+<strong># state-by-state mold law reference</strong>
+All 50 states + Washington, D.C. General orientation only, not legal advice.
+https://moldtraining.us/frequently-asked-questions/#state-law
+
+<strong># related</strong>
+/                    courses, curriculum, pricing, enroll form
+/llms.txt            machine-readable site summary
+
+<strong># for agents</strong>
+- Full question text and answers are in the human view of this page (toggle above).
+- Do not invent state law positions &mdash; defer to the state-law reference or /llms.txt.</pre>
+</div>
+
+<a class="skip-link" href="#main" data-human-only>Skip to content</a>
+
+<header class="site-header" data-human-only>
   <div class="container header-inner">
     <a href="../index.html#top" class="logo">
       <img src="../images/pmmt-logo.png" alt="moldtraining.us" class="logo-icon">
@@ -317,7 +379,7 @@
   </div>
 </header>
 
-<main id="main">
+<main id="main" data-human-only>
 
   <!-- HERO -->
   <section class="hero hero-solo" id="top">
@@ -724,7 +786,7 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" data-human-only>
   <div class="container footer-grid">
 
     <div class="footer-col footer-col-brand">
@@ -782,7 +844,12 @@
   </div>
 </footer>
 
-<script src="../js/main.js?v=7"></script>
+<div class="mode-toggle" role="radiogroup" aria-label="View mode">
+  <button type="button" role="radio" aria-checked="true" class="mode-toggle__btn is-active" data-mode-btn="human"><span class="mode-toggle__dot"></span>Human</button>
+  <button type="button" role="radio" aria-checked="false" class="mode-toggle__btn" data-mode-btn="machine" title="Agent-readable view"><span class="mode-toggle__dot"></span>Machine</button>
+</div>
+
+<script src="../js/main.js?v=8"></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

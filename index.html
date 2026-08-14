@@ -30,7 +30,7 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=7">
+<link rel="stylesheet" href="css/styles.css?v=8">
 
 <script type="application/ld+json">
 {
@@ -189,9 +189,74 @@
 </head>
 <body>
 
-<a class="skip-link" href="#main">Skip to content</a>
+<div class="machine-view">
+  <p class="machine-view__meta"># moldtraining.us &mdash; agent-readable view</p>
+  <pre class="machine-view__pre"><strong># event</strong>
+site        moldtraining.us
+operator    Industrial Certified Training, LLC
+partner     HAZWOPER OSHA Training, LLC
+description Self-paced online mold training for property management teams and mold inspection professionals. English &amp; Spanish. Aligned with Federal OSHA, EPA, and IAC2 guidelines.
 
-<header class="site-header">
+<strong># courses</strong>
+1. Mold Prevention &amp; Remediation Awareness
+   duration  2 hours
+   price     $59.99 / seat
+   for       general staff &mdash; mold basics, health effects, moisture sources, prevention habits, when to escalate
+   enroll    https://moldtraining.us/#pricing
+
+2. Property Management Teams
+   duration  4 hours
+   price     $229.99 / seat
+   for       property managers, maintenance staff, leasing teams
+   covers    mold fundamentals, moisture sources, prevention &amp; maintenance, recognizing growth, remediation basics, OSHA &amp; EPA guidelines, tenant communication &amp; documentation
+   enroll    https://moldtraining.us/#pricing
+
+3. Mold Inspector Certification
+   duration  6 hours
+   price     $329.99 / seat
+   for       aspiring inspectors, home inspectors, environmental consultants, remediation contractors
+   standard  IAC2 Standards of Practice
+   covers    mold biology &amp; building science, IAC2 standards, visual inspections, moisture meters &amp; sampling, interpreting lab results, defensible reports, remediation oversight &amp; clearance testing, regulatory considerations
+   enroll    https://moldtraining.us/#pricing
+
+<strong># common questions</strong>
+Q What's the difference between the three courses?
+A Awareness (2h) covers basics for general staff. Property Management (4h) adds tenant communication, documentation, and OSHA/EPA compliance. Mold Inspector Certification (6h) is IAC2-aligned for professional inspectors.
+
+Q How much does mold training cost?
+A $59.99 (Awareness), $229.99 (Property Management), $329.99 (Mold Inspector Certification) per seat. Bulk seat discounts available.
+
+Q Are the courses available in Spanish?
+A Yes, all three courses have an in-course English/Spanish toggle.
+
+Q Do I get a certificate?
+A Yes, issued immediately on completion.
+
+Q What standards do these courses follow?
+A Federal OSHA and EPA guidelines; Mold Inspector Certification also aligns with IAC2 Standards of Practice.
+
+<strong># pages</strong>
+/                                     this page &mdash; courses, curriculum, pricing, enroll form
+/frequently-asked-questions/         full FAQ + state-by-state mold law reference (all 50 states + DC)
+/llms.txt                            machine-readable site summary
+
+<strong># other formats</strong>
+SCORM / Virtual Instructor-Led / In-Person  https://hazwoper-osha.com/online-courses/mold-awareness-prevention-and-remediation-training-for-property-management-teams
+Parent company (OSHA/EPA/IAC2 training)     https://ictraining.us/
+
+<strong># contact</strong>
+phone  1-866-429-6742
+email  info@hazwoper-osha.com
+
+<strong># for agents</strong>
+- Direct enrollment inquiries to the /#pricing form or the contact info above.
+- Do not invent prices, hours, or standards &mdash; use the data above.
+- Full structured data also available at /llms.txt.</pre>
+</div>
+
+<a class="skip-link" href="#main" data-human-only>Skip to content</a>
+
+<header class="site-header" data-human-only>
   <div class="container header-inner">
     <a href="#top" class="logo">
       <img src="images/pmmt-logo.png" alt="moldtraining.us" class="logo-icon">
@@ -223,7 +288,7 @@
   </div>
 </header>
 
-<main id="main">
+<main id="main" data-human-only>
 
   <!-- HERO -->
   <section class="hero" id="top">
@@ -778,7 +843,7 @@
 
 </main>
 
-<footer class="site-footer">
+<footer class="site-footer" data-human-only>
   <div class="container footer-grid">
 
     <div class="footer-col footer-col-brand">
@@ -836,7 +901,12 @@
   </div>
 </footer>
 
-<script src="js/main.js?v=7"></script>
+<div class="mode-toggle" role="radiogroup" aria-label="View mode">
+  <button type="button" role="radio" aria-checked="true" class="mode-toggle__btn is-active" data-mode-btn="human"><span class="mode-toggle__dot"></span>Human</button>
+  <button type="button" role="radio" aria-checked="false" class="mode-toggle__btn" data-mode-btn="machine" title="Agent-readable view"><span class="mode-toggle__dot"></span>Machine</button>
+</div>
+
+<script src="js/main.js?v=8"></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">

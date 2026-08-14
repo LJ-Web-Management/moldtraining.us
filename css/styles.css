@@ -696,3 +696,57 @@ button{font-family:inherit;}
   .curriculum-list li{gap:16px;}
   .state-law-grid{grid-template-columns:1fr;}
 }
+
+/* ---------- Human / Machine view toggle ---------- */
+.mode-toggle{
+  position:fixed;left:50%;bottom:20px;transform:translateX(-50%);z-index:300;
+  display:inline-flex;align-items:center;gap:2px;padding:3px;
+  border-radius:9999px;
+  border:1px solid rgba(255,255,255,.12);
+  background:rgba(11,37,69,.9);
+  backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+  font-size:12px;line-height:1;letter-spacing:.02em;
+  box-shadow:var(--shadow-lg);
+}
+.mode-toggle__btn{
+  display:inline-flex;align-items:center;gap:6px;
+  height:26px;padding:0 12px;border:0;background:transparent;
+  color:rgba(255,255,255,.55);border-radius:9999px;cursor:pointer;
+  transition:background .15s ease,color .15s ease;
+}
+.mode-toggle__btn:hover{color:rgba(255,255,255,.9);}
+.mode-toggle__btn.is-active{background:rgba(255,255,255,.1);color:#fff;}
+.mode-toggle__dot{
+  display:inline-block;width:6px;height:6px;border-radius:9999px;
+  background:rgba(255,255,255,.25);transition:background .15s ease;
+}
+.mode-toggle__btn.is-active .mode-toggle__dot{background:var(--orange-500);}
+
+.machine-view{display:none;}
+
+html[data-mode="machine"]{color-scheme:dark;}
+html[data-mode="machine"] body{
+  overflow-x:hidden;
+  background:#0b0d12;
+  color:#e6e6e6;
+  font-family:'SFMono-Regular',Consolas,'Liberation Mono',Menlo,monospace;
+}
+html[data-mode="machine"] [data-human-only]{display:none !important;}
+html[data-mode="machine"] .machine-view{display:block;}
+
+.machine-view{
+  max-width:760px;margin:0 auto;padding:72px 24px 120px;
+  min-height:100vh;
+}
+.machine-view__meta{font-size:14px;color:#8a8f98;margin:0 0 32px;letter-spacing:.02em;}
+.machine-view__pre{
+  margin:0;white-space:pre-wrap;word-wrap:break-word;
+  font-family:inherit;font-size:13px;line-height:1.65;color:#e6e6e6;
+}
+.machine-view__pre strong{color:var(--orange-500);font-weight:400;}
+
+@media (max-width:640px){
+  .machine-view{padding:56px 16px 100px;}
+  .mode-toggle{left:16px;bottom:14px;transform:none;}
+}

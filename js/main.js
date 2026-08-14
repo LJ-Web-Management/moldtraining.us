@@ -184,4 +184,29 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
+  // Human / Machine view toggle
+  var modeToggle = document.querySelector('.mode-toggle');
+  if (modeToggle) {
+    var modeButtons = modeToggle.querySelectorAll('.mode-toggle__btn');
+    modeButtons.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var mode = btn.dataset.modeBtn;
+        document.documentElement.setAttribute('data-mode', mode);
+        modeButtons.forEach(function (b) {
+          var active = b === btn;
+          b.classList.toggle('is-active', active);
+          b.setAttribute('aria-checked', active ? 'true' : 'false');
+        });
+        if (window.Tawk_API) {
+          if (mode === 'machine') {
+            if (typeof window.Tawk_API.minimize === 'function') window.Tawk_API.minimize();
+            if (typeof window.Tawk_API.hideWidget === 'function') window.Tawk_API.hideWidget();
+          } else if (typeof window.Tawk_API.showWidget === 'function') {
+            window.Tawk_API.showWidget();
+          }
+        }
+      });
+    });
+  }
+
 });
