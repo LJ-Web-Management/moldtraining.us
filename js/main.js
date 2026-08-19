@@ -35,10 +35,10 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  // One shared set of course tabs drives both Curriculum and Who It's For panels
+  // Course tabs drive the Who It's For panels
   var infoCourseTabs = document.getElementById('infoCourseTabs');
   if (infoCourseTabs) {
-    var infoPanels = document.querySelectorAll('#curriculum .course-panel, #audience .course-panel');
+    var infoPanels = document.querySelectorAll('#audience .course-panel');
     infoCourseTabs.querySelectorAll('.course-tab').forEach(function (tab) {
       tab.addEventListener('click', function () {
         infoCourseTabs.querySelectorAll('.course-tab').forEach(function (other) {
@@ -75,7 +75,6 @@ document.addEventListener('DOMContentLoaded', function () {
 
   // Enroll form (seat count only; Stripe checkout wires in later)
   var enrollForm = document.getElementById('enrollForm');
-  var formSuccess = document.getElementById('formSuccess');
   var seatsInput = document.getElementById('seats');
   var formTotal = document.getElementById('formTotal');
   var priceOriginal = document.getElementById('priceOriginal');
@@ -87,42 +86,63 @@ document.addEventListener('DOMContentLoaded', function () {
   var bulkPricingPanel = document.getElementById('bulkPricingPanel');
   var bulkPricingBody = document.getElementById('bulkPricingBody');
 
-  // Bulk seat discount tiers, as a percentage off the selected course's base price
-  var bulkTiers = [
-    { label: '1', min: 1, discount: 0 },
-    { label: '2 – 10', min: 2, discount: 0.01 },
-    { label: '11 – 20', min: 11, discount: 0.02 },
-    { label: '21 – 50', min: 21, discount: 0.03 },
-    { label: '51 – 100', min: 51, discount: 0.05 },
-    { label: '101 – 250', min: 101, discount: 0.07 },
-    { label: '251 – 500', min: 251, discount: 0.08 },
-    { label: '501 – 1,000', min: 501, discount: 0.10 }
-  ];
+  // Bulk seat pricing, matching HAZWOPER OSHA Training's published per-seat rates exactly
+  // (same underlying course/platform). No published rate exists past 250 seats.
+  var bulkPricing = {
+    'awareness': [
+      { label: '1', min: 1, price: 59.99 },
+      { label: '2 – 10', min: 2, price: 59.39 },
+      { label: '11 – 20', min: 11, price: 58.79 },
+      { label: '21 – 50', min: 21, price: 58.19 },
+      { label: '51 – 100', min: 51, price: 56.99 },
+      { label: '101 – 250', min: 101, price: 55.79 }
+    ],
+    'pm-team': [
+      { label: '1', min: 1, price: 229.99 },
+      { label: '2 – 10', min: 2, price: 227.69 },
+      { label: '11 – 20', min: 11, price: 225.39 },
+      { label: '21 – 50', min: 21, price: 223.09 },
+      { label: '51 – 100', min: 51, price: 220.79 },
+      { label: '101 – 250', min: 101, price: 218.49 }
+    ],
+    'inspector': [
+      { label: '1', min: 1, price: 329.99 },
+      { label: '2 – 10', min: 2, price: 326.69 },
+      { label: '11 – 20', min: 11, price: 313.49 },
+      { label: '21 – 50', min: 21, price: 296.99 },
+      { label: '51 – 100', min: 51, price: 280.49 },
+      { label: '101 – 250', min: 101, price: 263.99 }
+    ]
+  };
 
   if (enrollForm && seatsInput && formTotal) {
+    var currentCourseValue = (enrollCourseTabs && enrollCourseTabs.querySelector('.course-tab.active'))
+      ? enrollCourseTabs.querySelector('.course-tab.active').dataset.value
+      : 'pm-team';
     var basePrice = parseFloat(enrollForm.dataset.pricePerSeat);
 
+    var tiersForCourse = function () {
+      return bulkPricing[currentCourseValue] || bulkPricing['pm-team'];
+    };
     var tierFor = function (seats) {
-      var match = bulkTiers[0];
-      for (var i = 0; i < bulkTiers.length; i++) {
-        if (seats >= bulkTiers[i].min) match = bulkTiers[i];
+      var tiers = tiersForCourse();
+      var match = tiers[0];
+      for (var i = 0; i < tiers.length; i++) {
+        if (seats >= tiers[i].min) match = tiers[i];
       }
       return match;
     };
-    var priceForDiscount = function (discount) {
-      return Math.round(basePrice * (1 - discount) * 100) / 100;
-    };
     var renderBulkTable = function (activeTier) {
       if (!bulkPricingBody) return;
-      bulkPricingBody.innerHTML = bulkTiers.map(function (tier) {
+      bulkPricingBody.innerHTML = tiersForCourse().map(function (tier) {
         var rowClass = tier === activeTier ? ' class="active"' : '';
-        return '<tr' + rowClass + '><td>' + tier.label + '</td><td>$' + priceForDiscount(tier.discount).toFixed(2) + '</td></tr>';
+        return '<tr' + rowClass + '><td>' + tier.label + '</td><td>$' + tier.price.toFixed(2) + '</td></tr>';
       }).join('');
     };
     var updatePricing = function () {
       var seats = Math.max(1, parseInt(seatsInput.value, 10) || 1);
       var tier = tierFor(seats);
-      var pricePerSeat = priceForDiscount(tier.discount);
+      var pricePerSeat = tier.price;
       var discounted = pricePerSeat < basePrice;
 
       if (priceOriginal && priceAmount) {
@@ -152,6 +172,7 @@ document.addEventListener('DOMContentLoaded', function () {
           other.setAttribute('aria-selected', other === tab ? 'true' : 'false');
         });
         basePrice = parseFloat(tab.dataset.price);
+        currentCourseValue = tab.dataset.value;
         enrollForm.dataset.pricePerSeat = basePrice;
         courseName.textContent = tab.dataset.name;
         courseHours.textContent = tab.dataset.hours + ' of self-paced online training';
@@ -163,6 +184,13 @@ document.addEventListener('DOMContentLoaded', function () {
     }
 
     updatePricing();
+
+    // Cross-page links land here as index.html?course=awareness#pricing
+    var courseParam = new URLSearchParams(window.location.search).get('course');
+    if (courseParam) {
+      var paramTab = enrollCourseTabs && enrollCourseTabs.querySelector('.course-tab[data-value="' + courseParam + '"]');
+      if (paramTab) paramTab.click();
+    }
   }
 
   // Any element with data-select-course or data-course selects that course and jumps to the enroll form
@@ -175,12 +203,13 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   });
 
-  if (enrollForm && formSuccess) {
+  if (enrollForm) {
     enrollForm.addEventListener('submit', function (e) {
       e.preventDefault();
-      enrollForm.hidden = true;
-      formSuccess.hidden = false;
-      formSuccess.scrollIntoView({ behavior: 'smooth', block: 'center' });
+      var activeTab = enrollCourseTabs ? enrollCourseTabs.querySelector('.course-tab.active') : null;
+      var courseCode = activeTab ? activeTab.dataset.value : 'pm-team';
+      var seats = Math.max(1, parseInt(seatsInput ? seatsInput.value : '1', 10) || 1);
+      window.location.href = 'checkout.html?course=' + encodeURIComponent(courseCode) + '&seats=' + encodeURIComponent(seats);
     });
   }
 

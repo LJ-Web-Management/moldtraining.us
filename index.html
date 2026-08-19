@@ -30,24 +30,38 @@
 
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="css/styles.css?v=8">
+<link rel="stylesheet" href="css/styles.css?v=10">
 
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@graph": [
     {
-      "@type": "Organization",
+      "@type": ["Organization", "EducationalOrganization"],
       "@id": "https://moldtraining.us/#organization",
       "name": "moldtraining.us",
       "url": "https://moldtraining.us/",
       "logo": "https://moldtraining.us/images/pmmt-logo.png",
       "telephone": "+1-866-429-6742",
       "email": "info@hazwoper-osha.com",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "11901 Santa Monica Blvd. Suite # 414",
+        "addressLocality": "Los Angeles",
+        "addressRegion": "CA",
+        "postalCode": "90025",
+        "addressCountry": "US"
+      },
       "parentOrganization": {
         "@type": "Organization",
         "name": "Industrial Certified Training, LLC",
         "url": "https://ictraining.us/"
+      },
+      "department": {
+        "@type": "Organization",
+        "name": "HAZWOPER OSHA Training, LLC",
+        "url": "https://hazwoper-osha.com/",
+        "description": "Training partner that develops and delivers the mold courses offered through moldtraining.us."
       },
       "sameAs": [
         "https://www.facebook.com/HazwoperOsha/",
@@ -66,10 +80,20 @@
       "publisher": { "@id": "https://moldtraining.us/#organization" }
     },
     {
+      "@type": "BreadcrumbList",
+      "itemListElement": [
+        { "@type": "ListItem", "position": 1, "name": "Home", "item": "https://moldtraining.us/" }
+      ]
+    },
+    {
       "@type": "Course",
       "name": "Mold Prevention & Remediation Awareness",
-      "description": "A 2-hour introduction to mold awareness for general staff, covering mold basics, health effects, common moisture sources, and basic prevention habits.",
+      "description": "A 2-hour introduction to mold awareness for general staff, covering mold basics, health effects, common moisture sources, and basic prevention habits. Aligned with Federal OSHA and EPA guidelines.",
+      "url": "https://moldtraining.us/mold-awareness-training/",
       "provider": { "@id": "https://moldtraining.us/#organization" },
+      "inLanguage": ["en", "es"],
+      "educationalCredentialAwarded": "Certificate of Completion",
+      "teaches": "Mold basics, health effects, common moisture sources, and basic prevention habits",
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
@@ -81,14 +105,19 @@
         "priceCurrency": "USD",
         "category": "Paid",
         "availability": "https://schema.org/InStock",
-        "url": "https://moldtraining.us/#pricing"
+        "url": "https://moldtraining.us/mold-awareness-training/"
       }
     },
     {
       "@type": "Course",
       "name": "Mold Awareness, Prevention & Remediation Training for Property Management Teams",
-      "description": "A 4-hour, self-paced online course built for property managers, maintenance staff, and leasing teams, aligned with Federal OSHA and EPA guidelines.",
+      "description": "A 4-hour, self-paced online course built for property managers, maintenance staff, and leasing teams, aligned with Federal OSHA and EPA guidelines and IAC2 Mold Inspection Standards of Practice.",
+      "url": "https://moldtraining.us/mold-training-for-property-management/",
       "provider": { "@id": "https://moldtraining.us/#organization" },
+      "inLanguage": ["en", "es"],
+      "educationalCredentialAwarded": "Certificate of Completion",
+      "teaches": "Mold fundamentals, moisture sources, prevention and maintenance, recognizing growth, remediation basics, OSHA and EPA guidelines, and tenant communication and documentation",
+      "occupationalCategory": "Property Manager, Maintenance Staff, Leasing Agent",
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
@@ -100,14 +129,19 @@
         "priceCurrency": "USD",
         "category": "Paid",
         "availability": "https://schema.org/InStock",
-        "url": "https://moldtraining.us/#pricing"
+        "url": "https://moldtraining.us/mold-training-for-property-management/"
       }
     },
     {
       "@type": "Course",
-      "name": "Mold Inspector Certification",
-      "description": "A 6-hour certification course for prevention, remediation, and removal, aligned with IAC2 Mold Inspection Standards of Practice.",
+      "name": "Mold Inspector Certification for Prevention, Remediation, and Removal Training",
+      "description": "A 6-hour training course covering mold inspection, prevention, remediation, and removal, aligned with IAC2 Mold Inspection Standards of Practice. Provides a certificate of completion; does not itself confer state licensure.",
+      "url": "https://moldtraining.us/mold-inspector-certification/",
       "provider": { "@id": "https://moldtraining.us/#organization" },
+      "inLanguage": ["en", "es"],
+      "educationalCredentialAwarded": "Certificate of Completion",
+      "teaches": "Mold biology, IAC2 inspection standards, visual inspections, moisture meters and sampling, interpreting lab results, defensible reports, and remediation oversight",
+      "occupationalCategory": "Mold Inspector, Home Inspector, Environmental Consultant, Remediation Contractor",
       "hasCourseInstance": {
         "@type": "CourseInstance",
         "courseMode": "online",
@@ -119,7 +153,7 @@
         "priceCurrency": "USD",
         "category": "Paid",
         "availability": "https://schema.org/InStock",
-        "url": "https://moldtraining.us/#pricing"
+        "url": "https://moldtraining.us/mold-inspector-certification/"
       }
     },
     {
@@ -178,7 +212,95 @@
                       "name": "Which course do I need to become a certified mold inspector?",
                       "acceptedAnswer": {
                               "@type": "Answer",
-                              "text": "The 6-hour Mold Inspector Certification course is aligned with IAC2 Mold Inspection Standards of Practice and is the right starting point if you plan to conduct professional mold inspections."
+                              "text": "The 6-hour Mold Inspector Certification for Prevention, Remediation, and Removal Training course is aligned with IAC2 Mold Inspection Standards of Practice and is the right starting point if you plan to conduct professional mold inspections. It provides a certificate of completion and does not itself confer state licensure."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Is moldtraining.us state approved?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "moldtraining.us courses are not marketed as state-approved training. State mold licensing requirements vary widely, and some states have no mold-specific licensing at all. See our State Mold Training Requirements page to check your state, and confirm directly with your state regulator before relying on this course for a licensing purpose."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Is this an EPA mold certification?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "No. The EPA does not certify mold inspectors or mold remediation firms. Our courses are designed to align with applicable EPA guidance on mold and moisture control, but completing a course is not an EPA certification."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Is this an OSHA mold certification?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "No. OSHA does not issue mold-specific certifications. Our courses are designed to align with relevant OSHA safety principles (such as PPE and hazard communication), but completing a course is not an OSHA certification."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Does this course make me a licensed mold inspector?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "No. The Mold Inspector Certification for Prevention, Remediation, and Removal Training course provides training and a certificate of completion aligned with IAC2 Mold Inspection Standards of Practice, but it does not itself guarantee state licensure or third-party certification. Licensing requirements vary by state; see our State Mold Training Requirements page."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "What certificate do I receive?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "You receive a certificate of completion for the specific course you finish. This documents that you completed the training and can support employer compliance files, internal training records, or continuing education needs. It is not the same as a state license or a third-party professional certification."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Can employers verify my certificate?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. Employers, property management companies, and compliance teams can verify a certificate through HAZWOPER OSHA Training's certificate verification system, our training partner. See our Verify Certificate page for details."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Is this accepted in Texas?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Texas generally requires anyone performing mold assessment or remediation to be licensed or registered under Texas rules. Our courses support awareness, documentation, and general training but are not a substitute for Texas mold assessor or remediation licensing. Check the Texas Department of Licensing and Regulation for current requirements."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Is this accepted in New York?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "New York licenses mold assessment and remediation professionals under its Labor Law. Our courses support awareness, documentation, and general training but are not a substitute for New York mold assessor or remediation licensing. Check the New York Department of Labor for current requirements."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Is this accepted in Florida?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Florida separately regulates the mold inspection and remediation industry. Our courses support awareness, documentation, and general training but are not a substitute for Florida mold-related licensing. Check the Florida Department of Business and Professional Regulation for current requirements."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Is this course for property managers or professional remediators?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "It depends on the course. The 2-hour Awareness course fits general staff, the 4-hour course is built specifically for property management teams, and the 6-hour Mold Inspector Certification Training fits aspiring inspectors, consultants, and remediation professionals. See our course comparison for details."
+                      }
+              },
+              {
+                      "@type": "Question",
+                      "name": "Are bulk seats available?",
+                      "acceptedAnswer": {
+                              "@type": "Answer",
+                              "text": "Yes. Per-seat discounts apply at 2-10, 11-20, 21-50, 51-100, and 101-250 seats. See the bulk pricing table on the pricing form for exact per-seat rates for your selected course."
                       }
               }
       ]
@@ -190,67 +312,88 @@
 <body>
 
 <div class="machine-view">
-  <p class="machine-view__meta"># moldtraining.us &mdash; agent-readable view</p>
+  <p class="machine-view__meta"># moldtraining.us: agent-readable view</p>
   <pre class="machine-view__pre"><strong># event</strong>
 site        moldtraining.us
 operator    Industrial Certified Training, LLC
-partner     HAZWOPER OSHA Training, LLC
+partner     HAZWOPER OSHA Training, LLC (delivers the underlying training platform &amp; certificates)
 description Self-paced online mold training for property management teams and mold inspection professionals. English &amp; Spanish. Aligned with Federal OSHA, EPA, and IAC2 guidelines.
+credential  Certificate of Completion only, not a state license, EPA certification, or OSHA certification. State licensing requirements vary; see /state-mold-training-requirements/.
 
 <strong># courses</strong>
 1. Mold Prevention &amp; Remediation Awareness
-   duration  2 hours
+   duration  2 hours &middot; CEU 0.2 &middot; certificate valid 36 months
    price     $59.99 / seat
-   for       general staff &mdash; mold basics, health effects, moisture sources, prevention habits, when to escalate
-   enroll    https://moldtraining.us/#pricing
+   for       general staff: mold basics, health effects, moisture sources, prevention habits, when to escalate
+   standards Federal OSHA &amp; EPA guidelines (no IAC2 claim)
+   page      https://moldtraining.us/mold-awareness-training/
 
-2. Property Management Teams
-   duration  4 hours
+2. Mold Awareness, Prevention &amp; Remediation Training for Property Management Teams
+   duration  4 hours &middot; CEU 0.4 &middot; certificate valid 24 months
    price     $229.99 / seat
    for       property managers, maintenance staff, leasing teams
-   covers    mold fundamentals, moisture sources, prevention &amp; maintenance, recognizing growth, remediation basics, OSHA &amp; EPA guidelines, tenant communication &amp; documentation
-   enroll    https://moldtraining.us/#pricing
+   covers    mold fundamentals, moisture sources, prevention &amp; maintenance, recognizing growth, remediation basics, OSHA &amp; EPA guidelines, IAC2-aligned inspection basics, tenant communication &amp; documentation
+   page      https://moldtraining.us/mold-training-for-property-management/
 
-3. Mold Inspector Certification
-   duration  6 hours
+3. Mold Inspector Certification for Prevention, Remediation, and Removal Training
+   duration  6 hours &middot; CEU 0.6 &middot; certificate valid 36 months
    price     $329.99 / seat
    for       aspiring inspectors, home inspectors, environmental consultants, remediation contractors
-   standard  IAC2 Standards of Practice
+   standard  aligned with IAC2 Mold Inspection Standards of Practice; does not itself confer state licensure or third-party certification
    covers    mold biology &amp; building science, IAC2 standards, visual inspections, moisture meters &amp; sampling, interpreting lab results, defensible reports, remediation oversight &amp; clearance testing, regulatory considerations
-   enroll    https://moldtraining.us/#pricing
+   page      https://moldtraining.us/mold-inspector-certification/
 
 <strong># common questions</strong>
 Q What's the difference between the three courses?
-A Awareness (2h) covers basics for general staff. Property Management (4h) adds tenant communication, documentation, and OSHA/EPA compliance. Mold Inspector Certification (6h) is IAC2-aligned for professional inspectors.
+A Awareness (2h) covers basics for general staff, OSHA/EPA only. Property Management (4h) adds tenant communication, documentation, and OSHA/EPA/IAC2-aligned compliance. Mold Inspector Certification Training (6h) is IAC2-aligned for professional inspectors.
 
 Q How much does mold training cost?
-A $59.99 (Awareness), $229.99 (Property Management), $329.99 (Mold Inspector Certification) per seat. Bulk seat discounts available.
+A $59.99 (Awareness), $229.99 (Property Management), $329.99 (Mold Inspector Certification Training) per seat. Bulk seat discounts at 2-10/11-20/21-50/51-100/101-250 seats.
 
 Q Are the courses available in Spanish?
 A Yes, all three courses have an in-course English/Spanish toggle.
 
 Q Do I get a certificate?
-A Yes, issued immediately on completion.
+A Yes, a certificate of completion is issued immediately on completion. This is not a state license or third-party professional certification.
+
+Q Is this course state approved, EPA certified, or OSHA certified?
+A No. EPA does not certify mold inspectors or remediation firms; OSHA does not issue mold-specific certifications; state approval is not claimed. Courses are designed to align with applicable EPA guidance, OSHA safety principles, and IAC2 standards where stated per-course. See /state-mold-training-requirements/ for state-by-state licensing context.
 
 Q What standards do these courses follow?
-A Federal OSHA and EPA guidelines; Mold Inspector Certification also aligns with IAC2 Standards of Practice.
+A Federal OSHA and EPA guidelines for all three; the Property Management and Mold Inspector Certification Training courses are additionally aligned with IAC2 Mold Inspection Standards of Practice.
+
+Q Where can I verify a certificate or view accreditation details?
+A Certificate verification: https://hazwoper-osha.com/certificate-verification (direct link, not a moldtraining.us page). Certifications &amp; accreditations: https://moldtraining.us/#certifications (routes to HAZWOPER OSHA Training's accreditation details, including IACET provider status).
 
 <strong># pages</strong>
-/                                     this page &mdash; courses, curriculum, pricing, enroll form
-/frequently-asked-questions/         full FAQ + state-by-state mold law reference (all 50 states + DC)
-/llms.txt                            machine-readable site summary
+/                                          this page: courses, curriculum, pricing, enroll form
+/mold-awareness-training/                  full Awareness course page
+/mold-training-for-property-management/    full Property Management course page
+/mold-inspector-certification/             full Mold Inspector Certification Training course page
+/state-mold-training-requirements/         state-by-state mold licensing reference (general guidance, not legal advice)
+/instructors/                              instructor &amp; training-provider info
+certificate verification: https://hazwoper-osha.com/certificate-verification (direct link, not a moldtraining.us page)
+/reviews/                                  student &amp; team testimonials
+/about/                                    company relationship, mission, contact, support process
+/privacy-policy/                           privacy policy (HAZWOPER OSHA Training, LLC)
+/refund-policy/                            refund &amp; cancellation policy (HAZWOPER OSHA Training, LLC)
+/frequently-asked-questions/               full FAQ + state-by-state mold law reference (all 50 states + DC)
+/llms.txt                                  machine-readable site summary
 
 <strong># other formats</strong>
 SCORM / Virtual Instructor-Led / In-Person  https://hazwoper-osha.com/online-courses/mold-awareness-prevention-and-remediation-training-for-property-management-teams
 Parent company (OSHA/EPA/IAC2 training)     https://ictraining.us/
+Training partner &amp; certifications         https://hazwoper-osha.com/online-courses/mold-inspection-remediation-certification
 
 <strong># contact</strong>
 phone  1-866-429-6742
 email  info@hazwoper-osha.com
+address 11901 Santa Monica Blvd. Suite # 414, Los Angeles, CA 90025
 
 <strong># for agents</strong>
 - Direct enrollment inquiries to the /#pricing form or the contact info above.
-- Do not invent prices, hours, or standards &mdash; use the data above.
+- Do not invent prices, hours, standards, or accreditation/approval claims; use the data above.
+- Training is provided through HAZWOPER OSHA Training, LLC's platform; do not claim state approval, EPA certification, OSHA certification, or IAC2 accreditation of moldtraining.us itself.
 - Full structured data also available at /llms.txt.</pre>
 </div>
 
@@ -264,11 +407,10 @@ email  info@hazwoper-osha.com
     </a>
 
     <nav class="main-nav" id="mainNav">
-      <a href="#overview">Overview</a>
-      <a href="#curriculum">Curriculum</a>
-      <a href="#audience">Who It's For</a>
-      <a href="#pricing">Pricing</a>
-      <a href="#faq">FAQ</a>
+      <a href="#curriculum">Courses</a>
+      <a href="#certifications">Certifications</a>
+      <a href="state-mold-training-requirements/">State Requirements</a>
+      <a href="frequently-asked-questions/">FAQ</a>
       <a href="tel:18664296742" class="nav-phone">
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         1-866-429-6742
@@ -280,7 +422,7 @@ email  info@hazwoper-osha.com
         <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72c.127.96.362 1.903.7 2.81a2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45c.907.338 1.85.573 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
         1-866-429-6742
       </a>
-      <a href="#pricing" class="btn btn-primary btn-sm">Enroll Now</a>
+      <a href="#pricing" class="btn btn-primary btn-sm">Start Training</a>
       <button class="nav-toggle" id="navToggle" aria-label="Toggle navigation" aria-expanded="false">
         <span></span><span></span><span></span>
       </button>
@@ -303,7 +445,7 @@ email  info@hazwoper-osha.com
         </p>
         <div class="hero-cta-row">
           <a href="#compare" class="btn btn-primary btn-lg">Find Which Course I Need</a>
-          <a href="#curriculum" class="btn btn-outline-light btn-lg">See What's Covered</a>
+          <a href="#certifications" class="btn btn-outline-light btn-lg">View Credential Details</a>
         </div>
         <ul class="hero-meta">
           <li><strong>2&ndash;6 hrs</strong> self-paced</li>
@@ -318,20 +460,20 @@ email  info@hazwoper-osha.com
         <h3>3 Courses, 1 Site</h3>
         <ul class="hero-course-list">
           <li>
-            <a href="#pricing" data-select-course="awareness">
-              <span class="hero-course-name">Mold Prevention &amp; Remediation Awareness</span>
+            <a href="mold-awareness-training/">
+              <span class="hero-course-name">Mold Awareness Training</span>
               <span class="hero-course-meta">2 Hours &middot; $59.99</span>
             </a>
           </li>
           <li>
-            <a href="#pricing" data-select-course="pm-team">
-              <span class="hero-course-name">Property Management Teams</span>
+            <a href="mold-training-for-property-management/">
+              <span class="hero-course-name">Property Management Mold Training</span>
               <span class="hero-course-meta">4 Hours &middot; $229.99</span>
             </a>
           </li>
           <li>
-            <a href="#pricing" data-select-course="inspector">
-              <span class="hero-course-name">Mold Inspector Certification</span>
+            <a href="mold-inspector-certification/">
+              <span class="hero-course-name">Mold Inspector Certification Training</span>
               <span class="hero-course-meta">6 Hours &middot; $329.99</span>
             </a>
           </li>
@@ -347,7 +489,94 @@ email  info@hazwoper-osha.com
       <div class="trust-badges">
         <span class="badge">Federal OSHA Guidelines</span>
         <span class="badge">EPA Guidelines</span>
-        <span class="badge">IAC2 Mold Inspection Standards</span>
+        <span class="badge">IAC2 Standards (Property Mgmt &amp; Inspector courses)</span>
+      </div>
+    </div>
+  </section>
+
+  <!-- CERTIFICATIONS & ACCREDITATIONS -->
+  <section class="section section-alt" id="certifications">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Certifications &amp; Accreditations</p>
+        <h2>Training Delivered Through an Accredited Partner</h2>
+        <p class="section-sub">
+          Training is provided in partnership with <strong>HAZWOPER OSHA Training, LLC</strong>. For current
+          certifications, accreditations, approvals, and compliance credentials, please review HAZWOPER OSHA
+          Training's official certifications and accreditations rather than relying on claims made anywhere else.
+        </p>
+      </div>
+
+      <div class="grid-3 feature-grid">
+        <a class="feature-card cert-box" href="https://www.iacet.org/affiliates/accredited-providers-list/accredited-provider-overview/?providerID=131618" target="_blank" rel="noopener">
+          <h3>IACET Accredited Provider</h3>
+          <p>Verify HAZWOPER OSHA Training's accreditation on IACET's official directory.</p>
+          <p class="cert-box-arrow">View on iacet.org &#8599;</p>
+        </a>
+        <a class="feature-card cert-box" href="https://www.bbb.org/us/ca/los-angeles/profile/online-education/hazwoper-osha-training-1216-1424720" target="_blank" rel="noopener">
+          <h3>BBB Profile</h3>
+          <p>Check HAZWOPER OSHA Training's rating and complaint history with the Better Business Bureau.</p>
+          <p class="cert-box-arrow">View on bbb.org &#8599;</p>
+        </a>
+        <a class="feature-card cert-box" href="https://www.trustpilot.com/review/hazwoper-osha.com" target="_blank" rel="noopener">
+          <h3>Trustpilot Reviews</h3>
+          <p>Read independently verified customer reviews on Trustpilot.</p>
+          <p class="cert-box-arrow">View on trustpilot.com &#8599;</p>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- CREDENTIAL TRANSPARENCY -->
+  <section class="section" id="credential-transparency">
+    <div class="container">
+      <div class="section-head">
+        <p class="eyebrow">Credential Transparency</p>
+        <h2>What You Actually Receive</h2>
+        <p class="section-sub">
+          "Certificate," "certification," and "license" are not interchangeable. Here's what each term means so
+          you know exactly what you're getting before you enroll.
+        </p>
+      </div>
+
+      <div class="grid-2" style="align-items:stretch;max-width:760px;margin:0 auto;">
+        <div class="feature-card">
+          <h3>Certificate of Completion</h3>
+          <p>Documents that you finished a specific course. This is what moldtraining.us issues.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Training Certification</h3>
+          <p>A credential showing you completed training aligned with a named standard (e.g. IAC2), not a license to practice.</p>
+        </div>
+        <div class="feature-card">
+          <h3>State License</h3>
+          <p>Legal permission to perform mold assessment or remediation in a given state, issued by that state's regulator, not by us.</p>
+        </div>
+        <div class="feature-card">
+          <h3>Third-Party Professional Certification</h3>
+          <p>A credential from an independent body (e.g. IICRC, NORMI, ACAC) with its own exam and renewal requirements.</p>
+        </div>
+      </div>
+
+      <p style="max-width:760px;margin:32px auto 0;text-align:center;">
+        Upon successful completion, students receive a <strong>certificate of completion</strong> for the selected
+        mold training course. This certificate documents training completion and may support employer compliance
+        files, internal training records, or continuing education needs. State licensing requirements vary, and
+        this course may not replace state-required mold assessor or mold remediation licensing where applicable.
+        See our <a href="state-mold-training-requirements/">State Mold Training Requirements</a> page for details.
+      </p>
+
+      <div class="faq-cta-box" style="max-width:760px;margin:24px auto 0;">
+        <p><strong>Disclaimer &rarr;</strong> EPA does not certify mold inspectors or mold remediation firms. OSHA does
+        not issue mold-specific certifications. Our courses are designed to align with applicable EPA guidance, OSHA
+        safety principles, and relevant industry practices.</p>
+      </div>
+
+      <div class="faq-cta-box" style="max-width:760px;margin:16px auto 0;">
+        <p><strong>In short &rarr;</strong> moldtraining.us provides self-paced online mold awareness, property
+        management mold response, and mold inspector certification training. Courses are available in English and
+        Spanish and include a certificate of completion. Training is provided through HAZWOPER OSHA Training, LLC.
+        State licensing requirements vary.</p>
       </div>
     </div>
   </section>
@@ -406,168 +635,28 @@ email  info@hazwoper-osha.com
       <div class="section-head">
         <p class="eyebrow">Curriculum</p>
         <h2>What You'll Learn</h2>
-        <p class="section-sub">Pick a course to see its module breakdown and who it's for.</p>
+        <p class="section-sub">Each course has its own full module-by-module breakdown, standards alignment, exam details, and sample certificate on its dedicated page.</p>
       </div>
 
-      <div class="course-tabs" id="infoCourseTabs" role="tablist" aria-label="Select a course to see its curriculum and who it's for">
-        <button type="button" class="course-tab" data-panel="awareness" role="tab" aria-selected="false">Mold Prevention &amp; Remediation Awareness</button>
-        <button type="button" class="course-tab active" data-panel="pm-team" role="tab" aria-selected="true">Property Management Teams</button>
-        <button type="button" class="course-tab" data-panel="inspector" role="tab" aria-selected="false">Mold Inspector Certification</button>
-      </div>
-
-      <div class="course-panel" data-panel="awareness">
-        <ol class="curriculum-list">
-          <li>
-            <span class="curriculum-num">01</span>
-            <div>
-              <h3>Understanding Mold Basics</h3>
-              <p>What mold is, common types, and why it matters in residential and commercial spaces.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">02</span>
-            <div>
-              <h3>Health Effects &amp; Warning Signs</h3>
-              <p>Recognizing symptoms of mold exposure and visible warning signs in a building.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">03</span>
-            <div>
-              <h3>Common Moisture Sources</h3>
-              <p>Everyday causes of water intrusion and the conditions that let mold take hold.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">04</span>
-            <div>
-              <h3>Basic Prevention Habits</h3>
-              <p>Simple, everyday practices that stop mold before it starts.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">05</span>
-            <div>
-              <h3>When to Escalate</h3>
-              <p>Knowing the line between a quick fix and when to call in a certified professional.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-
-      <div class="course-panel active" data-panel="pm-team">
-        <ol class="curriculum-list">
-          <li>
-            <span class="curriculum-num">01</span>
-            <div>
-              <h3>Mold Fundamentals &amp; Health Effects</h3>
-              <p>What mold is, how it grows, and the health effects associated with exposure for tenants and staff.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">02</span>
-            <div>
-              <h3>Moisture Sources &amp; Building Vulnerabilities</h3>
-              <p>Common water intrusion points in residential and commercial properties, including roofs, plumbing, HVAC, and building envelopes.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">03</span>
-            <div>
-              <h3>Prevention &amp; Routine Maintenance</h3>
-              <p>Proactive practices that stop mold before it starts, including humidity control and inspection schedules.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">04</span>
-            <div>
-              <h3>Recognizing &amp; Assessing Mold Growth</h3>
-              <p>How to visually identify suspected mold and determine when further assessment or remediation is required.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">05</span>
-            <div>
-              <h3>Remediation Basics &amp; Safe Response</h3>
-              <p>Overview of remediation procedures, PPE considerations, and when to escalate to certified remediation professionals.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">06</span>
-            <div>
-              <h3>OSHA &amp; EPA Guidelines</h3>
-              <p>How federal OSHA and EPA guidance applies to property management operations and staff responsibilities.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">07</span>
-            <div>
-              <h3>Tenant Communication &amp; Documentation</h3>
-              <p>Best practices for logging complaints, communicating with residents, and maintaining a defensible paper trail.</p>
-            </div>
-          </li>
-        </ol>
-      </div>
-
-      <div class="course-panel" data-panel="inspector">
-        <ol class="curriculum-list">
-          <li>
-            <span class="curriculum-num">01</span>
-            <div>
-              <h3>Mold Biology &amp; Building Science</h3>
-              <p>How mold grows, spreads, and interacts with building materials and moisture.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">02</span>
-            <div>
-              <h3>IAC2 Standards of Practice</h3>
-              <p>The scope and structure of a professional mold inspection under IAC2 guidelines.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">03</span>
-            <div>
-              <h3>Conducting a Visual Inspection</h3>
-              <p>Systematic, room-by-room inspection methodology and on-site documentation.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">04</span>
-            <div>
-              <h3>Moisture Meters &amp; Sampling Techniques</h3>
-              <p>Using moisture meters, air sampling, and surface sampling correctly.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">05</span>
-            <div>
-              <h3>Interpreting Lab Results</h3>
-              <p>Reading mold lab reports and explaining findings to clients in plain language.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">06</span>
-            <div>
-              <h3>Writing a Defensible Inspection Report</h3>
-              <p>Structuring findings into a clear, professional, legally sound report.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">07</span>
-            <div>
-              <h3>Remediation Oversight &amp; Clearance Testing</h3>
-              <p>Verifying remediation scope and confirming post-remediation clearance.</p>
-            </div>
-          </li>
-          <li>
-            <span class="curriculum-num">08</span>
-            <div>
-              <h3>Regulatory &amp; Legal Considerations</h3>
-              <p>Federal OSHA, EPA, and state-specific requirements for mold inspectors.</p>
-            </div>
-          </li>
-        </ol>
+      <div class="grid-3 feature-grid">
+        <div class="feature-card">
+          <h3>Mold Awareness Training</h3>
+          <p><strong>2 Hours &middot; $59.99 &middot; CEU 0.2</strong><br>Federal OSHA &amp; EPA guidelines</p>
+          <p>Mold basics, health effects &amp; warning signs, common moisture sources, basic prevention habits, and when to escalate.</p>
+          <a href="mold-awareness-training/" class="btn btn-outline btn-sm">Full Curriculum &amp; Details</a>
+        </div>
+        <div class="feature-card">
+          <h3>Property Management Mold Training</h3>
+          <p><strong>4 Hours &middot; $229.99 &middot; CEU 0.4</strong><br>OSHA, EPA &amp; IAC2-aligned</p>
+          <p>Mold fundamentals, moisture sources, prevention &amp; maintenance, recognizing growth, remediation basics, tenant communication &amp; documentation.</p>
+          <a href="mold-training-for-property-management/" class="btn btn-outline btn-sm">Full Curriculum &amp; Details</a>
+        </div>
+        <div class="feature-card">
+          <h3>Mold Inspector Certification Training</h3>
+          <p><strong>6 Hours &middot; $329.99 &middot; CEU 0.6</strong><br>IAC2-aligned</p>
+          <p>Mold biology &amp; building science, IAC2 standards, visual inspections, sampling techniques, interpreting lab results, defensible reports, remediation oversight.</p>
+          <a href="mold-inspector-certification/" class="btn btn-outline btn-sm">Full Curriculum &amp; Details</a>
+        </div>
       </div>
     </div>
   </section>
@@ -578,11 +667,17 @@ email  info@hazwoper-osha.com
       <div class="section-head">
         <p class="eyebrow">Who It's For</p>
         <h2>Built for Every Role</h2>
-        <p class="section-sub">Use the course buttons above to switch which team this section shows.</p>
+        <p class="section-sub">Use the buttons below to switch which team this section shows.</p>
+      </div>
+
+      <div class="course-tabs" id="infoCourseTabs" role="tablist" aria-label="Select a course to see who it's for">
+        <button type="button" class="course-tab" data-panel="awareness" role="tab" aria-selected="false">Mold Awareness Training</button>
+        <button type="button" class="course-tab active" data-panel="pm-team" role="tab" aria-selected="true">Property Management Mold Training</button>
+        <button type="button" class="course-tab" data-panel="inspector" role="tab" aria-selected="false">Mold Inspector Certification Training</button>
       </div>
 
       <div class="course-panel" data-panel="awareness">
-        <div class="grid-4 audience-grid">
+        <div class="audience-panel-grid">
           <div class="audience-card">Front-Line Maintenance Staff</div>
           <div class="audience-card">Leasing &amp; Office Staff</div>
           <div class="audience-card">New Hires &amp; Seasonal Workers</div>
@@ -591,7 +686,7 @@ email  info@hazwoper-osha.com
       </div>
 
       <div class="course-panel active" data-panel="pm-team">
-        <div class="grid-4 audience-grid">
+        <div class="audience-panel-grid">
           <div class="audience-card">Property Managers</div>
           <div class="audience-card">Maintenance &amp; Facilities Staff</div>
           <div class="audience-card">Leasing Agents</div>
@@ -604,7 +699,7 @@ email  info@hazwoper-osha.com
       </div>
 
       <div class="course-panel" data-panel="inspector">
-        <div class="grid-4 audience-grid">
+        <div class="audience-panel-grid">
           <div class="audience-card">Aspiring Mold Inspectors</div>
           <div class="audience-card">Home Inspectors Adding Mold Services</div>
           <div class="audience-card">Environmental Consultants</div>
@@ -630,9 +725,9 @@ email  info@hazwoper-osha.com
           <thead>
             <tr>
               <th></th>
-              <th>Mold Prevention &amp; Remediation Awareness</th>
-              <th class="compare-current">Property Management Teams</th>
-              <th>Mold Inspector Certification</th>
+              <th>Mold Awareness Training</th>
+              <th class="compare-current">Property Management Mold Training</th>
+              <th>Mold Inspector Certification Training</th>
             </tr>
           </thead>
           <tbody>
@@ -655,25 +750,61 @@ email  info@hazwoper-osha.com
               <td>Inspectors, consultants, and remediation professionals</td>
             </tr>
             <tr>
-              <td>Certification Level</td>
-              <td>Awareness</td>
-              <td class="compare-current">Operational</td>
-              <td>IAC2 Professional</td>
+              <td>Credential Level</td>
+              <td>Awareness: certificate of completion</td>
+              <td class="compare-current">Operational: certificate of completion</td>
+              <td>IAC2-aligned training: certificate of completion</td>
             </tr>
             <tr>
               <td>Standards</td>
               <td>OSHA &middot; EPA</td>
-              <td class="compare-current">OSHA &middot; EPA &middot; IAC2</td>
-              <td>OSHA &middot; EPA &middot; IAC2</td>
+              <td class="compare-current">OSHA &middot; EPA &middot; IAC2-aligned</td>
+              <td>OSHA &middot; EPA &middot; IAC2-aligned</td>
             </tr>
             <tr class="compare-cta-row">
               <td></td>
-              <td><a href="#pricing" class="btn btn-outline btn-sm" data-select-course="awareness">Enroll Now</a></td>
-              <td class="compare-current"><a href="#pricing" class="btn btn-primary btn-sm" data-select-course="pm-team">Enroll Now</a></td>
-              <td><a href="#pricing" class="btn btn-outline btn-sm" data-select-course="inspector">Enroll Now</a></td>
+              <td><a href="mold-awareness-training/" class="btn btn-outline btn-sm">Enroll Now</a></td>
+              <td class="compare-current"><a href="mold-training-for-property-management/" class="btn btn-primary btn-sm">Start Training</a></td>
+              <td><a href="mold-inspector-certification/" class="btn btn-outline btn-sm">Enroll Now</a></td>
             </tr>
           </tbody>
         </table>
+      </div>
+
+      <div class="compare-cards">
+        <div class="compare-card">
+          <h3>Mold Awareness Training</h3>
+          <dl>
+            <div><dt>Duration</dt><dd>2 Hours</dd></div>
+            <div><dt>Price</dt><dd>$59.99 / seat</dd></div>
+            <div><dt>Best For</dt><dd>General staff who need basic mold awareness</dd></div>
+            <div><dt>Credential Level</dt><dd>Awareness: certificate of completion</dd></div>
+            <div><dt>Standards</dt><dd>OSHA &middot; EPA</dd></div>
+          </dl>
+          <a href="mold-awareness-training/" class="btn btn-outline btn-sm btn-block">Enroll Now</a>
+        </div>
+        <div class="compare-card compare-current">
+          <h3>Property Management Mold Training</h3>
+          <dl>
+            <div><dt>Duration</dt><dd>4 Hours</dd></div>
+            <div><dt>Price</dt><dd>$229.99 / seat</dd></div>
+            <div><dt>Best For</dt><dd>Property managers, maintenance staff, and leasing teams</dd></div>
+            <div><dt>Credential Level</dt><dd>Operational: certificate of completion</dd></div>
+            <div><dt>Standards</dt><dd>OSHA &middot; EPA &middot; IAC2-aligned</dd></div>
+          </dl>
+          <a href="mold-training-for-property-management/" class="btn btn-primary btn-sm btn-block">Enroll Now</a>
+        </div>
+        <div class="compare-card">
+          <h3>Mold Inspector Certification Training</h3>
+          <dl>
+            <div><dt>Duration</dt><dd>6 Hours</dd></div>
+            <div><dt>Price</dt><dd>$329.99 / seat</dd></div>
+            <div><dt>Best For</dt><dd>Inspectors, consultants, and remediation professionals</dd></div>
+            <div><dt>Credential Level</dt><dd>IAC2-aligned training: certificate of completion</dd></div>
+            <div><dt>Standards</dt><dd>OSHA &middot; EPA &middot; IAC2-aligned</dd></div>
+          </dl>
+          <a href="mold-inspector-certification/" class="btn btn-outline btn-sm btn-block">Enroll Now</a>
+        </div>
       </div>
     </div>
   </section>
@@ -691,14 +822,14 @@ email  info@hazwoper-osha.com
         <div class="form-row course-select-row">
           <span class="course-select-label" id="enrollCourseLabel">Select a Course</span>
           <div class="course-tabs" id="enrollCourseTabs" role="tablist" aria-labelledby="enrollCourseLabel">
-            <button type="button" class="course-tab" data-value="awareness" data-name="Mold Prevention &amp; Remediation Awareness" data-hours="2 hours" data-price="59.99" role="tab" aria-selected="false">Mold Prevention &amp; Remediation Awareness</button>
-            <button type="button" class="course-tab active" data-value="pm-team" data-name="Mold Awareness, Prevention &amp; Remediation for Property Management" data-hours="4 hours" data-price="229.99" role="tab" aria-selected="true">Property Management Teams</button>
-            <button type="button" class="course-tab" data-value="inspector" data-name="Mold Inspector Certification" data-hours="6 hours" data-price="329.99" role="tab" aria-selected="false">Mold Inspector Certification</button>
+            <button type="button" class="course-tab" data-value="awareness" data-name="Mold Awareness Training" data-hours="2 hours" data-price="59.99" role="tab" aria-selected="false">Mold Awareness Training</button>
+            <button type="button" class="course-tab active" data-value="pm-team" data-name="Property Management Mold Training" data-hours="4 hours" data-price="229.99" role="tab" aria-selected="true">Property Management Mold Training</button>
+            <button type="button" class="course-tab" data-value="inspector" data-name="Mold Inspector Certification for Prevention, Remediation, and Removal Training" data-hours="6 hours" data-price="329.99" role="tab" aria-selected="false">Mold Inspector Certification Training</button>
           </div>
         </div>
 
         <div class="pricing-card-top">
-          <h3 id="courseName">Mold Awareness, Prevention &amp; Remediation for Property Management</h3>
+          <h3 id="courseName">Property Management Mold Training</h3>
           <div class="price">
             <span class="price-original" id="priceOriginal" hidden>$229.99</span>
             <span class="price-current"><span class="price-amount" id="priceAmount">$229.99</span><span class="price-per">/ seat</span></span>
@@ -740,11 +871,6 @@ email  info@hazwoper-osha.com
         </form>
 
         <p class="format-note">This reserves seats in the <strong>On-Demand Online</strong> course. Need SCORM, Virtual Instructor-Led, or In-Person training instead? <a href="https://hazwoper-osha.com/online-courses/mold-awareness-prevention-and-remediation-training-for-property-management-teams" target="_blank" rel="noopener">See other formats on HAZWOPER-OSHA.com &rarr;</a></p>
-
-        <div class="form-success" id="formSuccess" hidden>
-          <h4>Seat count received.</h4>
-          <p>You'll be taken to secure payment to complete your enrollment.</p>
-        </div>
       </div>
     </div>
   </section>
@@ -818,7 +944,25 @@ email  info@hazwoper-osha.com
             <span class="faq-icon">+</span>
           </button>
           <div class="faq-answer">
-            <p>The 6-hour Mold Inspector Certification course is aligned with IAC2 Mold Inspection Standards of Practice and is the right starting point if you plan to conduct professional mold inspections.</p>
+            <p>The 6-hour Mold Inspector Certification for Prevention, Remediation, and Removal Training course is aligned with IAC2 Mold Inspection Standards of Practice and is the right starting point if you plan to conduct professional mold inspections. It provides training and a certificate of completion; it does not itself guarantee state licensure or third-party certification. <a href="state-mold-training-requirements/">Check your state's requirements</a> first.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Is moldtraining.us state approved, EPA certified, or OSHA certified?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>No. EPA does not certify mold inspectors or mold remediation firms, and OSHA does not issue mold-specific certifications, so we don't claim either. We also don't claim state approval; licensing requirements vary by state, and this training may not satisfy them. Our courses are designed to align with applicable EPA guidance, OSHA safety principles, and (for the Property Management and Inspector courses) IAC2 Mold Inspection Standards of Practice. See <a href="#certifications">Certifications &amp; Accreditations</a> and our <a href="state-mold-training-requirements/">State Mold Training Requirements</a> page.</p>
+          </div>
+        </div>
+        <div class="faq-item">
+          <button class="faq-question" aria-expanded="false">
+            Can employers verify a student's certificate?
+            <span class="faq-icon">+</span>
+          </button>
+          <div class="faq-answer">
+            <p>Yes. Visit HAZWOPER OSHA Training's <a href="https://hazwoper-osha.com/certificate-verification" target="_blank" rel="noopener">certificate verification system</a> directly.</p>
           </div>
         </div>
       </div>
@@ -833,9 +977,9 @@ email  info@hazwoper-osha.com
   <section class="final-cta">
     <div class="container final-cta-inner">
       <h2>Protect Your Properties. Train Your Team.</h2>
-      <p>4 hours online. Certificate on completion. English &amp; Spanish.</p>
+      <p>4 hours online. Certificate of completion. English &amp; Spanish.</p>
       <div class="hero-cta-row">
-        <a href="#pricing" class="btn btn-primary btn-lg">Enroll Now: $229.99</a>
+        <a href="#pricing" class="btn btn-primary btn-lg">Start Training</a>
         <a href="tel:18664296742" class="btn btn-outline-light btn-lg">Call 1-866-429-6742</a>
       </div>
     </div>
@@ -852,7 +996,35 @@ email  info@hazwoper-osha.com
         <span class="logo-text logo-text-footer">moldtraining<span class="logo-dash">.us</span></span>
       </a>
 
-      <p class="footer-legal"><strong>Subsidiary Partnership</strong><br>moldtraining.us is a subsidiary of <a href="https://ictraining.us/" target="_blank" rel="noopener">Industrial Certified Training, LLC</a>, a company specializing in OSHA, EPA, and IAC2 training. We partner with <a href="https://hazwoper-osha.com/" target="_blank" rel="noopener">HAZWOPER OSHA Training, LLC</a> to offer comprehensive safety compliance courses.</p>
+      <p class="footer-legal"><strong>Subsidiary Partnership</strong><br>moldtraining.us is a subsidiary of <a href="https://ictraining.us/" target="_blank" rel="noopener">Industrial Certified Training, LLC</a>, a company specializing in OSHA, EPA, and IAC2 training. We partner with <a href="https://hazwoper-osha.com/" target="_blank" rel="noopener">HAZWOPER OSHA Training, LLC</a>, which delivers the training platform, instruction, and certificates, to offer comprehensive mold compliance courses. <a href="about/">Read more about this relationship &rarr;</a></p>
+      <p class="footer-address">11901 Santa Monica Blvd. Suite # 414<br>Los Angeles, CA 90025</p>
+      <div class="footer-badges">
+        <a href="https://www.iacet.org/affiliates/accredited-providers-list/accredited-provider-overview/?providerID=131618" target="_blank" rel="noopener" aria-label="IACET Accredited Provider">
+          <img src="https://media.hazwoper-osha.com/wp-content/uploads/2023/11/1698821020/IACET-small.webp" alt="IACET Accredited Provider" loading="lazy">
+        </a>
+        <a href="https://www.bbb.org/us/ca/los-angeles/profile/online-education/hazwoper-osha-training-1216-1424720" target="_blank" rel="noopener" aria-label="BBB Profile">
+          <img src="https://media.hazwoper-osha.com/wp-content/uploads/2026/07/1784291935/bbb.webp" alt="BBB A+ Rating" loading="lazy">
+        </a>
+        <a href="https://www.trustpilot.com/review/hazwoper-osha.com" target="_blank" rel="noopener" aria-label="Trustpilot Reviews">
+          <img src="https://media.hazwoper-osha.com/wp-content/uploads/2026/07/1784292027/trust.webp" alt="Google Trust Pilot Reviews" loading="lazy">
+        </a>
+      </div>
+    </div>
+
+    <div class="footer-col footer-col-links">
+      <h4 class="footer-col-heading">Site</h4>
+      <div class="footer-nav-links">
+        <a href="about/">About</a>
+        <a href="#curriculum">Course Catalog</a>
+        <a href="#certifications">Certifications &amp; Accreditations</a>
+        <a href="state-mold-training-requirements/">State Mold Training Requirements</a>
+        <a href="https://hazwoper-osha.com/certificate-verification" target="_blank" rel="noopener">Verify Certificate</a>
+        <a href="reviews/">Reviews</a>
+        <a href="frequently-asked-questions/">FAQ</a>
+        <a href="contact/">Contact</a>
+        <a href="privacy-policy/">Privacy Policy</a>
+        <a href="refund-policy/">Refund Policy</a>
+      </div>
     </div>
 
     <div class="footer-col footer-col-contact">
@@ -906,19 +1078,25 @@ email  info@hazwoper-osha.com
   <button type="button" role="radio" aria-checked="false" class="mode-toggle__btn" data-mode-btn="machine" title="Agent-readable view"><span class="mode-toggle__dot"></span>Machine</button>
 </div>
 
-<script src="js/main.js?v=8"></script>
+<script src="js/main.js?v=11"></script>
 
 <!--Start of Tawk.to Script-->
 <script type="text/javascript">
 var Tawk_API=Tawk_API||{}, Tawk_LoadStart=new Date();
-(function(){
-var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
-s1.async=true;
-s1.src='https://embed.tawk.to/6a5a95a2096ab21d402a762c/1jtoth11r';
-s1.charset='UTF-8';
-s1.setAttribute('crossorigin','*');
-s0.parentNode.insertBefore(s1,s0);
-})();
+Tawk_API.autoStart = false; // prevent chat window from auto-opening
+
+setTimeout(function(){
+  Tawk_LoadStart = new Date();
+  (function(){
+    var s1=document.createElement("script"),s0=document.getElementsByTagName("script")[0];
+    s1.async=true;
+    s1.src='https://embed.tawk.to/6a5a95a2096ab21d402a762c/1jtoth11r';
+    s1.charset='UTF-8';
+    s1.setAttribute('crossorigin','*');
+    s1.onload = function(){ if (window.Tawk_API && window.Tawk_API.start) window.Tawk_API.start(); };
+    s0.parentNode.insertBefore(s1,s0);
+  })();
+}, 2500);
 </script>
 <!--End of Tawk.to Script-->
 </body>

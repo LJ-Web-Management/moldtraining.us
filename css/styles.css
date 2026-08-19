@@ -223,8 +223,11 @@ button{font-family:inherit;}
 
 .grid-3{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;}
 .grid-4{display:grid;grid-template-columns:repeat(4,1fr);gap:20px;}
+.grid-2{display:grid;grid-template-columns:repeat(2,1fr);gap:20px;}
+@media (max-width:640px){.grid-2{grid-template-columns:1fr;}}
 
 .feature-card{
+  display:block;
   background:var(--white);
   border:1px solid var(--gray-200);
   border-radius:var(--radius);
@@ -235,6 +238,21 @@ button{font-family:inherit;}
 .feature-icon{font-size:1.6rem;margin-bottom:.75rem;}
 .feature-card h3{font-size:1.05rem;}
 .feature-card p{font-size:.92rem;margin-bottom:0;}
+
+/* Curriculum cards: pin the CTA to the bottom regardless of copy length */
+#curriculum .feature-grid{align-items:stretch;}
+#curriculum .feature-card{display:flex;flex-direction:column;height:100%;}
+#curriculum .feature-card .btn{margin-top:auto;align-self:flex-start;}
+
+/* Certification boxes linking out to third-party accreditation sites */
+.cert-box{
+  display:block;
+  text-align:center;
+  padding:32px 24px;
+}
+.cert-box h3{font-size:1.05rem;margin-bottom:.5rem;}
+.cert-box p{font-size:.88rem;margin-bottom:0;}
+.cert-box .cert-box-arrow{color:var(--orange-500);font-weight:700;}
 
 /* ---------- Course tabs (shared: Curriculum & Who It's For) ---------- */
 .course-tabs{
@@ -295,6 +313,12 @@ button{font-family:inherit;}
 }
 .audience-card:hover{box-shadow:var(--shadow-md);transform:translateY(-2px);}
 
+/* Who It's For: centers a trailing incomplete row instead of left-hanging it */
+.audience-panel-grid{display:flex;flex-wrap:wrap;justify-content:center;gap:20px;}
+.audience-panel-grid .audience-card{flex:1 1 240px;max-width:263px;}
+@media (max-width:960px){.audience-panel-grid .audience-card{max-width:calc(50% - 10px);}}
+@media (max-width:640px){.audience-panel-grid .audience-card{max-width:100%;flex-basis:100%;}}
+
 /* ---------- Compare courses ---------- */
 .compare-table-wrap{overflow-x:auto;}
 .compare-table{
@@ -327,8 +351,32 @@ button{font-family:inherit;}
 }
 .compare-table tbody tr:last-child td{border-bottom:none;}
 .compare-current{background:rgba(245,130,12,.06);}
+.state-table tbody td:first-child{white-space:normal;}
 .compare-table thead th.compare-current{background:var(--orange-500);}
 .compare-cta-row td{padding:20px;}
+
+/* Below the breakpoint, swap the table for stacked per-course cards so nothing needs horizontal scrolling */
+.compare-cards{display:none;}
+@media (max-width:860px){
+  .compare-table-wrap{display:none;}
+  .compare-cards{display:grid;gap:20px;}
+  .compare-card{
+    background:var(--white);
+    border:1px solid var(--gray-200);
+    border-radius:var(--radius);
+    padding:24px;
+    box-shadow:var(--shadow-sm);
+  }
+  .compare-card.compare-current{border-color:var(--orange-500);box-shadow:var(--shadow-md);}
+  .compare-card h3{font-size:1.1rem;margin-bottom:16px;}
+  .compare-card dl{margin:0 0 20px;border-top:1px solid var(--gray-100);}
+  .compare-card dl > div{
+    display:flex;justify-content:space-between;gap:12px;
+    padding:.6rem 0;border-bottom:1px solid var(--gray-100);
+  }
+  .compare-card dt{font-weight:700;color:var(--navy-800);font-size:.85rem;}
+  .compare-card dd{margin:0;color:var(--gray-700);font-size:.85rem;text-align:right;}
+}
 
 /* ---------- Pricing ---------- */
 .pricing-section{background:var(--navy-900);}
@@ -345,7 +393,7 @@ button{font-family:inherit;}
 }
 .course-select-row{margin-bottom:24px;}
 .course-select-label{font-size:.85rem;font-weight:700;color:var(--navy-800);display:block;margin-bottom:10px;}
-.course-select-row .course-tabs{justify-content:flex-start;margin-bottom:0;}
+.course-select-row .course-tabs{justify-content:center;margin-bottom:0;}
 
 .pricing-card-top{
   display:flex;justify-content:space-between;align-items:flex-start;gap:1rem;
@@ -604,10 +652,22 @@ button{font-family:inherit;}
 .site-footer{background:var(--navy-900);color:#c9d3e6;padding:56px 0 0;}
 .footer-grid{
   display:grid;
-  grid-template-columns:1.4fr 1fr;
-  gap:48px;
+  grid-template-columns:1.2fr .85fr 1fr;
+  gap:40px;
   padding-bottom:40px;
   border-bottom:1px solid rgba(255,255,255,.12);
+}
+.footer-nav-links{display:flex;flex-direction:column;gap:.6rem;}
+.footer-nav-links a{font-size:.92rem;font-weight:600;color:#c9d3e6;}
+.footer-nav-links a:hover{color:var(--orange-500);}
+.footer-address{font-size:.85rem;color:#9fadc9;margin-top:.75rem;}
+@media (max-width:960px){
+  .footer-grid{grid-template-columns:1fr 1fr;}
+  .footer-col-brand{grid-column:1 / -1;}
+}
+@media (max-width:640px){
+  .footer-grid{grid-template-columns:1fr;}
+  .footer-col-brand{grid-column:auto;}
 }
 .footer-logo{margin-bottom:20px;}
 .footer-legal{font-size:.85rem;color:#9fadc9;margin-bottom:1em;}
@@ -628,6 +688,15 @@ button{font-family:inherit;}
   font-size:.92rem;font-weight:600;color:#c9d3e6;
 }
 .footer-contact-links a:hover{color:var(--orange-500);}
+.footer-badges{display:flex;flex-wrap:wrap;align-items:center;gap:14px;margin-top:16px;}
+.footer-badges a{
+  display:flex;align-items:center;justify-content:center;
+  background:var(--white);
+  border-radius:6px;
+  padding:6px 10px;
+  height:40px;
+}
+.footer-badges img{height:100%;width:auto;display:block;}
 .footer-social{display:flex;gap:.6rem;}
 .footer-social a{
   display:flex;align-items:center;justify-content:center;
@@ -641,6 +710,36 @@ button{font-family:inherit;}
 
 .footer-bottom{background:var(--orange-500);padding:16px 0;}
 .footer-bottom p{font-size:.82rem;color:var(--white);font-weight:600;text-align:center;margin:0;}
+
+/* ---------- Important Pages quick menu (About page) ---------- */
+.important-pages{
+  max-width:360px;margin:32px auto 0;
+  background:var(--white);
+  border:1px solid var(--gray-200);
+  border-radius:var(--radius);
+  padding:24px 28px;
+  box-shadow:var(--shadow-sm);
+}
+.important-pages h3{font-size:.78rem;text-transform:uppercase;letter-spacing:1px;color:var(--orange-600);margin-bottom:14px;}
+.important-pages a{
+  display:flex;align-items:center;gap:.6rem;
+  padding:.5rem 0;
+  font-size:.95rem;font-weight:700;color:var(--navy-800);
+}
+.important-pages a:hover{color:var(--orange-500);}
+.important-pages a + a{border-top:1px solid var(--gray-100);}
+
+/* ---------- Policy documents ---------- */
+.policy-content{max-width:820px;margin:0 auto;}
+.policy-content h2{font-size:1.3rem;margin-top:2.2em;}
+.policy-content h2:first-child{margin-top:0;}
+.policy-content h3{font-size:1.05rem;margin-top:1.6em;color:var(--navy-800);}
+.policy-content p{color:var(--gray-700);}
+.policy-content ul,.policy-content ol{list-style:disc;padding-left:1.4rem;margin:0 0 1em;}
+.policy-content ol{list-style:decimal;}
+.policy-content li{margin-bottom:.4em;color:var(--gray-700);}
+.policy-content a{color:var(--orange-600);font-weight:700;text-decoration:underline;}
+.policy-meta{font-size:.85rem;color:var(--gray-500);margin-bottom:2em;padding-bottom:1em;border-bottom:1px solid var(--gray-200);}
 
 /* ---------- Responsive ---------- */
 @media (max-width:960px){
