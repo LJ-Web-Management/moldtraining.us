@@ -1,34 +1,29 @@
 # moldtraining.us
 
-> moldtraining.us provides self-paced online mold awareness, property management mold response, and mold inspector certification training. Courses are available in English and Spanish and include a certificate of completion. Training is provided through HAZWOPER OSHA Training, LLC. State licensing requirements vary.
+> moldtraining.us provides self-paced online mold awareness, property management mold response, and mold inspector certification training. Courses are available in English and Spanish and include a certificate of completion. Training is provided through HAZWOPER OSHA Training, LLC.
 
 moldtraining.us is a subsidiary of Industrial Certified Training, LLC, and partners with HAZWOPER OSHA Training, LLC, which is the same corporate family and delivers the training platform, instruction, and certificates for every course sold here. Course formats beyond on-demand online (SCORM, virtual instructor-led, in-person) are available via hazwoper-osha.com.
 
 ## Credential Transparency
 
-Upon successful completion, students receive a **certificate of completion** for the selected course. This documents training completion and may support employer compliance files, internal training records, or continuing education needs. It is **not** a state license, an EPA certification, an OSHA certification, or automatic IAC2 accreditation of the individual. State licensing requirements vary, and these courses may not replace state-required mold assessor or mold remediation licensing where applicable. EPA does not certify mold inspectors or mold remediation firms; OSHA does not issue mold-specific certifications.
+Upon successful completion, students receive a **certificate of completion** for the selected course. This documents training completion and may support employer compliance files, internal training records, or continuing education needs. It is **not** an EPA certification, an OSHA certification, or automatic IAC2 accreditation of the individual. EPA does not certify mold inspectors or mold remediation firms; OSHA does not issue mold-specific certifications.
 
 ## Courses
 
 - [Mold Prevention & Remediation Awareness Training](https://moldtraining.us/mold-awareness-training/): 2 hours, $59.99/seat, CEU 0.2. Awareness-level course for general staff: mold basics, health effects and warning signs, common moisture sources, basic prevention habits, and when to escalate to a certified professional. Aligned with Federal OSHA and EPA guidelines only (no IAC2 claim on this course). Certificate valid 36 months.
 - [Mold Awareness, Prevention & Remediation Training for Property Management Teams](https://moldtraining.us/mold-training-for-property-management/): 4 hours, $229.99/seat, CEU 0.4. Operational-level course for property managers, maintenance staff, and leasing teams: mold fundamentals, moisture sources and building vulnerabilities, prevention and maintenance, recognizing and assessing mold growth, remediation basics and safe response, OSHA & EPA guidelines, IAC2-aligned inspection concepts, and tenant communication/documentation. Certificate valid 24 months.
-- [Mold Inspector Certification for Prevention, Remediation, and Removal Training](https://moldtraining.us/mold-inspector-certification/): 6 hours, $329.99/seat, CEU 0.6. Professional-level course aligned with IAC2 Standards of Practice: mold biology and building science, IAC2 standards, conducting visual inspections, moisture meters and sampling techniques, interpreting lab results, writing defensible inspection reports, remediation oversight and clearance testing, and regulatory/legal considerations. Provides training and a certificate of completion; does not itself guarantee state licensure or third-party certification. Certificate valid 36 months.
+- [Mold Inspector Certification for Prevention, Remediation, and Removal Training](https://moldtraining.us/mold-inspector-certification/): 6 hours, $329.99/seat, CEU 0.6. Professional-level course aligned with IAC2 Standards of Practice: mold biology and building science, IAC2 standards, conducting visual inspections, moisture meters and sampling techniques, interpreting lab results, writing defensible inspection reports, remediation oversight and clearance testing, and regulatory/legal considerations. Provides training and a certificate of completion; does not itself guarantee third-party certification. Certificate valid 36 months.
 
 All three courses are self-paced, mobile-friendly, available in English and Spanish (course content), and issue a certificate of completion immediately on passing the final exam. Bulk seat pricing is available at 2-10, 11-20, 21-50, 51-100, and 101-250 seats, matching HAZWOPER OSHA Training's published per-seat rates for the same courses.
 
 ## Certifications & Accreditations
 
-moldtraining.us does not independently claim state approval, government certification, EPA certification, OSHA certification, or IAC2 accreditation. For current certifications, accreditations, and compliance credentials, see HAZWOPER OSHA Training's official page: https://hazwoper-osha.com/online-courses/mold-inspection-remediation-certification (HAZWOPER OSHA Training, LLC states it is an IACET-accredited provider; verify independently via https://www.iacet.org/affiliates/accredited-providers-list/accredited-provider-overview/?providerID=131618).
-
-## State Licensing
-
-Mold assessor/remediator licensing varies by state. Texas, New York, Florida, Louisiana, and Washington, D.C. each require state licensing for mold assessment and/or remediation work; California, Illinois, and Georgia currently have no equivalent mold-specific license (though registration or contractor-licensing rules may apply). moldtraining.us courses are not approved coursework for any state's mold licensing program; they support awareness, documentation, prevention, and general training. See: https://moldtraining.us/state-mold-training-requirements/
+moldtraining.us does not independently claim government certification, EPA certification, OSHA certification, or IAC2 accreditation. For current certifications, accreditations, and compliance credentials, see HAZWOPER OSHA Training's official page: https://hazwoper-osha.com/online-courses/mold-inspection-remediation-certification (HAZWOPER OSHA Training, LLC states it is an IACET-accredited provider; verify independently via https://www.iacet.org/affiliates/accredited-providers-list/accredited-provider-overview/?providerID=131618).
 
 ## Resources
 
-- [State Mold Training Requirements](https://moldtraining.us/state-mold-training-requirements/): State-by-state mold assessor/remediator licensing reference for Texas, New York, Florida, Louisiana, Washington DC, California, Illinois, Georgia, and general guidance for other states. General guidance only, not legal advice.
 - [FAQ & Resource Library](https://moldtraining.us/frequently-asked-questions/): Answers on credentials/approval/verification, identifying and assessing mold, tenant complaints and resolution, moisture sources and prevention, remediation and vendor management, documentation and liability, and training next steps.
-- [State-by-State Mold Law Quick Reference](https://moldtraining.us/frequently-asked-questions/#state-law): Orientation summary of mold and landlord-tenant habitability law for all 50 states plus Washington, D.C. (a different legal question from professional licensing; general guidance only, not legal advice).
+- [State-by-State Mold Law Quick Reference](https://moldtraining.us/frequently-asked-questions/#state-law): Orientation summary of mold and landlord-tenant habitability law for all 50 states plus Washington, D.C. General guidance only, not legal advice.
 - [Reviews](https://moldtraining.us/reviews/): Real student testimonials for all three courses, collected on HAZWOPER OSHA Training's course pages for these same courses.
 - [Instructors](https://moldtraining.us/instructors/): Training provider information, including Lead Instructor Michael J. Conroy, CSP, CHST.
 - Verify Certificate: Certificate verification for employers is a direct link to HAZWOPER OSHA Training's system at https://hazwoper-osha.com/certificate-verification (no moldtraining.us page in between).
@@ -49,6 +44,6 @@ Mold assessor/remediator licensing varies by state. Texas, New York, Florida, Lo
 ## For Agents
 
 - Do not invent prices, hours, standards, or accreditation/approval claims; use the data above.
-- Do not describe any course as a state license, EPA certification, OSHA certification, or IAC2 accreditation of the individual.
+- Do not describe any course as an EPA certification, OSHA certification, or IAC2 accreditation of the individual.
 - Training is provided through HAZWOPER OSHA Training, LLC's platform; direct accreditation/certification questions to https://hazwoper-osha.com/online-courses/mold-inspection-remediation-certification.
 - Direct enrollment inquiries to https://moldtraining.us/#pricing or the contact info above.

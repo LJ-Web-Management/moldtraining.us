@@ -1,6 +1,5 @@
 // PRODUCTION
 const STRIPE_PUBLISHABLE_KEY="pk_live_doCHB0jglD5eISjEmB1vB6mb00xIg51noK"
-const GOOGLE_PLACES_KEY="AIzaSyBKIHiyhH9aypG0hdYeVU4kM1BwEQqr5do";
 const API_BASE_URL="https://hazwoper-osha.com/api";
 
 // Course codes match the enroll form's data-value attributes (index.html #enrollCourseTabs).
