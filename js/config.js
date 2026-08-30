@@ -1,5 +1,6 @@
 // PRODUCTION
 const STRIPE_PUBLISHABLE_KEY="pk_live_doCHB0jglD5eISjEmB1vB6mb00xIg51noK"
+// const STRIPE_PUBLISHABLE_KEY = "pk_test_51KRElxBHssw16TqHLVweh7MZorffCzySrRWdwAeURnEjnjuNZ7tsIfnmcBq1px0qSGWfJ3Kl2bDQRjaCCJpEO27W005Qidmdci"; // STAGING
 const GOOGLE_PLACES_KEY="AIzaSyBKIHiyhH9aypG0hdYeVU4kM1BwEQqr5do";
 const API_BASE_URL="https://hazwoper-osha.com/api";
 
@@ -11,8 +12,8 @@ var courses = [
   {id: 237, code: 'inspector', name: 'Mold Inspector Certification Training', price: 329.99}
 ];
 
-// Bulk seat pricing per course, matching HAZWOPER OSHA Training's published per-seat rates
-// (kept identical to the tiers in js/main.js so pricing is consistent between pages).
+// Bulk seat pricing per course, matching HAZWOPER OSHA Training's published per-seat rates.
+// Single source of truth — shared by the enroll form pricing (main.js) and checkout (checkout.js).
 var bulkPricing = {
   'awareness': [
     { label: '1', min: 1, price: 59.99 },
@@ -52,3 +53,22 @@ function tierForCourse(courseCode, seats) {
 function formatMoney(amount) {
   return Number(amount).toLocaleString('en-US', { minimumFractionDigits: 2, maximumFractionDigits: 2 });
 }
+
+// Mobile nav toggle (shared by all pages; lets the checkout page run without main.js)
+document.addEventListener('DOMContentLoaded', function () {
+  var navToggle = document.getElementById('navToggle');
+  var mainNav = document.getElementById('mainNav');
+  if (navToggle && mainNav && !navToggle.dataset.navWired) {
+    navToggle.dataset.navWired = '1';
+    navToggle.addEventListener('click', function () {
+      var isOpen = mainNav.classList.toggle('open');
+      navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+    });
+    mainNav.querySelectorAll('a').forEach(function (link) {
+      link.addEventListener('click', function () {
+        mainNav.classList.remove('open');
+        navToggle.setAttribute('aria-expanded', 'false');
+      });
+    });
+  }
+});

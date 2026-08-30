@@ -336,7 +336,6 @@ document.addEventListener('DOMContentLoaded', function () {
         payment_method_id: paymentMethodId,
         order_type: 'normal',
         order_status: 'pending',
-        order_form: 'moldtraining.us',
         order_from: 'moldtraining.us',
         billing_first_name: firstName,
         billing_last_name: lastName,

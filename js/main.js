@@ -1,9 +1,10 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-  // Mobile nav toggle
+  // Mobile nav toggle (wired by config.js when present; guard prevents double-binding)
   var navToggle = document.getElementById('navToggle');
   var mainNav = document.getElementById('mainNav');
-  if (navToggle && mainNav) {
+  if (navToggle && mainNav && !navToggle.dataset.navWired) {
+    navToggle.dataset.navWired = '1';
     navToggle.addEventListener('click', function () {
       var isOpen = mainNav.classList.toggle('open');
       navToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
@@ -85,35 +86,6 @@ document.addEventListener('DOMContentLoaded', function () {
   var bulkPricingToggle = document.getElementById('bulkPricingToggle');
   var bulkPricingPanel = document.getElementById('bulkPricingPanel');
   var bulkPricingBody = document.getElementById('bulkPricingBody');
-
-  // Bulk seat pricing, matching HAZWOPER OSHA Training's published per-seat rates exactly
-  // (same underlying course/platform). No published rate exists past 250 seats.
-  var bulkPricing = {
-    'awareness': [
-      { label: '1', min: 1, price: 59.99 },
-      { label: '2 – 10', min: 2, price: 59.39 },
-      { label: '11 – 20', min: 11, price: 58.79 },
-      { label: '21 – 50', min: 21, price: 58.19 },
-      { label: '51 – 100', min: 51, price: 56.99 },
-      { label: '101 – 250', min: 101, price: 55.79 }
-    ],
-    'pm-team': [
-      { label: '1', min: 1, price: 229.99 },
-      { label: '2 – 10', min: 2, price: 227.69 },
-      { label: '11 – 20', min: 11, price: 225.39 },
-      { label: '21 – 50', min: 21, price: 223.09 },
-      { label: '51 – 100', min: 51, price: 220.79 },
-      { label: '101 – 250', min: 101, price: 218.49 }
-    ],
-    'inspector': [
-      { label: '1', min: 1, price: 329.99 },
-      { label: '2 – 10', min: 2, price: 326.69 },
-      { label: '11 – 20', min: 11, price: 313.49 },
-      { label: '21 – 50', min: 21, price: 296.99 },
-      { label: '51 – 100', min: 51, price: 280.49 },
-      { label: '101 – 250', min: 101, price: 263.99 }
-    ]
-  };
 
   if (enrollForm && seatsInput && formTotal) {
     var currentCourseValue = (enrollCourseTabs && enrollCourseTabs.querySelector('.course-tab.active'))
