@@ -94,6 +94,7 @@ document.addEventListener('DOMContentLoaded', function () {
     var basePrice = parseFloat(enrollForm.dataset.pricePerSeat);
 
     var tiersForCourse = function () {
+      if (typeof bulkPricing === 'undefined') return [{ label: '1', min: 1, price: basePrice }];
       return bulkPricing[currentCourseValue] || bulkPricing['pm-team'];
     };
     var tierFor = function (seats) {

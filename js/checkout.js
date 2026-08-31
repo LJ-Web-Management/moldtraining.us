@@ -32,7 +32,7 @@ document.addEventListener('DOMContentLoaded', function () {
   var seatsParam = Math.max(1, parseInt(urlParams.get('seats') || '1', 10));
 
   var course = (typeof courses !== 'undefined' && Array.isArray(courses))
-    ? (courses.find(function (c) { return c.code === courseParam; }) || courses[0])
+    ? (courses.find(function (c) { return c.code === courseParam; }) || courses.find(function (c) { return c.code === 'pm-team'; }) || courses[0])
     : { id: 372, code: 'pm-team', name: 'Property Management Mold Training', price: 229.99 };
 
   var getStripe = function () {
