@@ -2,13 +2,17 @@
 <html lang="en">
 <head>
 <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-CJV8W4KR8X"></script>
 <script>
   window.dataLayer = window.dataLayer || [];
   function gtag(){dataLayer.push(arguments);}
   gtag('js', new Date());
-
   gtag('config', 'G-CJV8W4KR8X');
+  window.addEventListener('load', function(){
+    var s = document.createElement('script');
+    s.async = true;
+    s.src = 'https://www.googletagmanager.com/gtag/js?id=G-CJV8W4KR8X';
+    document.head.appendChild(s);
+  });
 </script>
 
 <script src="https://analytics.ahrefs.com/analytics.js" data-key="Sw8wKpVcnzWc0ydpyO7Y1A" async></script>
@@ -30,9 +34,7 @@
 <meta name="twitter:description" content="Property managers rarely get early warning from mold itself. They usually hear about a musty odor, a recurring leak, condensation near a window, a damp carpet,…">
 <meta name="twitter:image" content="https://moldtraining.us/blog/assets/img/posts/mold-prevention-training-for-property-managers-moisture-hvac-and-documentation-basics.png">
 
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-<link rel="stylesheet" href="../../css/styles.css?v=16">
+<link rel="stylesheet" href="../../css/styles.css?v=17">
 <link rel="stylesheet" href="../assets/css/blog.css">
 
 <script type="application/ld+json">
@@ -210,7 +212,7 @@
     </div>
 
     <div class="footer-col footer-col-links">
-      <h4 class="footer-col-heading">Site</h4>
+      <h3 class="footer-col-heading">Site</h3>
       <div class="footer-nav-links">
         <a href="../../about/">About</a>
         <a href="../../instructors/">Instructors</a>
@@ -227,7 +229,7 @@
     </div>
 
     <div class="footer-col footer-col-contact">
-      <h4 class="footer-col-heading">Contact Us</h4>
+      <h3 class="footer-col-heading">Contact Us</h3>
       <p class="footer-contact-lead">Get in Touch</p>
       <p class="footer-contact-sub">Have questions? We're here to help. Reach out to us anytime.</p>
 
@@ -273,7 +275,6 @@ setTimeout(function(){
     s1.async=true;
     s1.src='https://embed.tawk.to/6a5a95a2096ab21d402a762c/1jtoth11r';
     s1.charset='UTF-8';
-    s1.setAttribute('crossorigin','*');
     s0.parentNode.insertBefore(s1,s0);
   })();
 }, 2500);
