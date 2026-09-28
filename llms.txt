@@ -36,6 +36,10 @@ moldtraining.us does not independently claim government certification, EPA certi
 - [HAZWOPER-OSHA.com course listing](https://hazwoper-osha.com/online-courses/mold-awareness-prevention-and-remediation-training-for-property-management-teams): SCORM, Virtual Instructor-Led, and In-Person training options.
 - [Industrial Certified Training, LLC](https://ictraining.us/): Parent company, specializing in OSHA, EPA, and IAC2 training.
 
+## AI Agents (WebMCP)
+
+- [AI Agents & WebMCP](https://moldtraining.us/ai-agents/): This site registers WebMCP tools (navigator.modelContext) on every page: list_courses, recommend_course, get_price_quote, search_site_content, get_certificate_verification_info, and start_checkout. start_checkout only opens a pre-filled checkout; the person always enters payment details and clicks Pay.
+
 ## Contact
 
 - Phone: 1-866-429-6742 (Mon–Sat, 5:00 AM–5:00 PM PST)

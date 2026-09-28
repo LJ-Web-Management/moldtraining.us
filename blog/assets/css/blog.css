@@ -408,6 +408,36 @@
   background: #fdfaf6;
   border-radius: 0 8px 8px 0;
   color: var(--gray-700, #3c4657);
+  font-style: italic;
+}
+
+.post-content blockquote p {
+  margin: 0;
+}
+
+.post-content > p:first-of-type {
+  font-size: 1.15rem;
+  font-weight: 500;
+  color: var(--navy-900, #0b2545);
+}
+
+.post-content hr,
+.post-content .post-divider {
+  border: none;
+  height: 1px;
+  margin: 40px 0;
+  background: linear-gradient(to right, transparent, var(--gray-200, #e2e6ec) 20%, var(--gray-200, #e2e6ec) 80%, transparent);
+}
+
+.post-content .post-spacer {
+  height: 28px;
+}
+
+.post-content .post-caption {
+  font-size: 0.85rem;
+  font-style: italic;
+  color: #6b7688;
+  margin: -8px 0 20px;
 }
 
 .post-content .sources-list {

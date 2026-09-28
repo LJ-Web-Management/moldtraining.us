@@ -1,0 +1,18 @@
+{
+  "schema_version": "v1",
+  "name_for_human": "Mold Training",
+  "name_for_model": "moldtraining",
+  "description_for_human": "Online mold awareness, property management, and inspector certification training.",
+  "description_for_model": "Provides self-paced online mold training courses (Awareness, Property Management, Inspector Certification) in English and Spanish, aligned with Federal OSHA, EPA, and IAC2 guidelines. Use the content API to retrieve a structured summary of courses, pricing, curriculum, and FAQs for moldtraining.us without scraping HTML.",
+  "auth": {
+    "type": "none"
+  },
+  "api": {
+    "type": "openapi",
+    "url": "https://moldtraining.us/openapi.json",
+    "is_user_authenticated": false
+  },
+  "logo_url": "https://moldtraining.us/images/pmmt-logo.png",
+  "contact_email": "info@hazwoper-osha.com",
+  "legal_info_url": "https://moldtraining.us/privacy-policy/"
+}
