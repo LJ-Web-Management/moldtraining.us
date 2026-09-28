@@ -622,17 +622,42 @@ function uniqueSlug(baseSlug, existingSlugs) {
   return slug;
 }
 
+// Doc titles routinely run 90-120 chars ("Topic: long descriptive subtitle"),
+// which trips Ahrefs' "Title too long" check on the <title> tag specifically.
+// The H1/og/twitter/JSON-LD headline stay as the full title (good for
+// sharing and readability) - only the <title> tag gets shortened, first by
+// dropping anything after a colon, then by a hard word-boundary cut, so a
+// tag is never left this long regardless of what a future upload names it.
+const TITLE_SUFFIX = " | moldtraining.us";
+const MAX_TITLE_TAG_LENGTH = 65;
+
+function pageTitleFor(title) {
+  if ((title + TITLE_SUFFIX).length <= MAX_TITLE_TAG_LENGTH) return title;
+
+  const budget = MAX_TITLE_TAG_LENGTH - TITLE_SUFFIX.length;
+  const beforeColon = title.split(":")[0].trim();
+  if (beforeColon.length > 0 && beforeColon.length <= budget) return beforeColon;
+
+  const base = beforeColon.length > 0 && beforeColon.length < title.length ? beforeColon : title;
+  if (base.length <= budget) return base;
+  const cut = base.slice(0, budget);
+  const lastSpace = cut.lastIndexOf(" ");
+  return (lastSpace > 0 ? cut.slice(0, lastSpace) : cut).trim();
+}
+
 function buildPostPage(title, dateDisplay, isoDate, bodyHtml, imagePath, slug, description) {
   const template = fs.readFileSync(TEMPLATE_FILE, "utf8");
   const shareImageUrl = imagePath ? SITE_URL + "/blog/" + imagePath : SITE_URL + "/images/pmmt-logo.png";
   const canonicalUrl = BLOG_URL + "/posts/" + slug + ".html";
   const imageRel = imagePath ? "../" + imagePath : "";
+  const pageTitle = pageTitleFor(title);
 
   return template
     .split("__SHARE_IMAGE_URL__").join(shareImageUrl)
     .split("__CANONICAL_URL__").join(canonicalUrl)
     .split("__IMAGE_REL__").join(imageRel)
     .split("__DESCRIPTION__").join(escapeHtml(description))
+    .split("__PAGE_TITLE__").join(pageTitle)
     .split("__TITLE__").join(title)
     .split("__ISO_DATE__").join(isoDate)
     .split("__DATE_DISPLAY__").join(dateDisplay)
